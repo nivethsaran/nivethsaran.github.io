@@ -5,7 +5,7 @@
   "background_color": "#348cb2",
   "display": "minimal-ui",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "https://nivethsaran.github.io",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
