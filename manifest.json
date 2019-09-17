@@ -3,9 +3,9 @@
   "short_name": "Niveth",
   "theme_color": "#348cb2",
   "background_color": "#348cb2",
-  "display": "minimal-ui",
+  "display": "standalone",
   "Scope": "/",
-  "start_url": "https://nivethsaran.github.io",
+  "start_url": "/index.html",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",
