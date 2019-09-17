@@ -15,7 +15,7 @@
 	<link rel="manifest" href="/manifest.json">
 	<meta name="description" content="Niveth Saran ">
 	<meta name="theme-color" content="#348cb2" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -61,6 +61,11 @@
 	<script>
 		window.onload = function() {
 			document.body.classList.remove('is-preload');
+
+			if ('serviceWorker' in navigator) {
+		    navigator.serviceWorker
+		             .register('./sw.js');
+		  }
 		}
 		window.ontouchmove = function() {
 			return false;
@@ -71,10 +76,7 @@
 
 		'use strict';
 
-	  if ('serviceWorker' in navigator) {
-	    navigator.serviceWorker
-	             .register('./sw.js');
-	  }
+
 	</script>
 	<!-- <script src="js/main.js"></script> -->
 </body>
