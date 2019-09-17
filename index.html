@@ -61,7 +61,7 @@
 	<script>
 		window.onload = function() {
 			document.body.classList.remove('is-preload');
-
+			'use strict';
 			if ('serviceWorker' in navigator) {
 		    navigator.serviceWorker
 		             .register('./sw.js');
@@ -74,7 +74,7 @@
 			document.body.scrollTop = 0;
 		}
 
-		'use strict';
+
 
 
 	</script>
