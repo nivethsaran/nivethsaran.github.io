@@ -15,7 +15,8 @@
 	<link rel="manifest" href="/manifest.json">
 	<meta name="description" content="Niveth Saran ">
 	<meta name="theme-color" content="#348cb2" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">	<noscript>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
@@ -67,8 +68,15 @@
 		window.onorientationchange = function() {
 			document.body.scrollTop = 0;
 		}
+
+		'use strict';
+
+	  if ('serviceWorker' in navigator) {
+	    navigator.serviceWorker
+	             .register('./sw.js');
+	  }
 	</script>
-	<script src="js/main.js"></script>
+	<!-- <script src="js/main.js"></script> -->
 </body>
 
 </html>
