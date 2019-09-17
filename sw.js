@@ -1,24 +1,15 @@
-var cacheName = 'nivethsaran';
-var filesToCache = [
-  '/',
-  '/index.html',
-  '/assests/css/main.css',
-];
-
-/* Start the service worker and cache all of the app's content */
-self.addEventListener('install', function(e) {
-  e.waitUntil(
-    caches.open(cacheName).then(function(cache) {
-      return cache.addAll(filesToCache);
-    })
-  );
+//jshint esversion:8
+self.addEventListener('fetch', event => {
+    //caching for offline viewing
+    const {request} = event;
+    const url = new URL(request.url);
+    if(url.origin === location.origin) {
+        event.respondWith(cacheData(request));
+    } else {
+        event.respondWith(networkFirst(request));
+    }
 });
-
-/* Serve cached content when offline */
-self.addEventListener('fetch', function(e) {
-  e.respondWith(
-    caches.match(e.request).then(function(response) {
-      return response || fetch(e.request);
-    })
-  );
-});
+async function cacheData(request) {
+    const cachedResponse = await caches.match(request);
+    return cachedResponse || fetch(request);
+}
