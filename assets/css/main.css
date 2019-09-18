@@ -209,7 +209,8 @@ input, select, textarea {
 		width: 100%;
 	}
 
-/* BG */
+/* 
+*/
 
 	#bg {
 		-moz-animation: bg 60s linear infinite;
@@ -225,8 +226,8 @@ input, select, textarea {
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
-
-		background: #348cb2 url("images/bg1.jpg") bottom left;
+/* url("images/bg1.jpg") bottom left */
+		background: #348cb2 ;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
