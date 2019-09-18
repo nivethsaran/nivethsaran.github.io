@@ -67,17 +67,17 @@
 	<script>
 
 
-	if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-        .then((reg) => {
-          console.log('Service worker registered.', reg);
-        });
-  });
-}
+
 		window.onload = function() {
 			document.body.classList.remove('is-preload');
-
+			if ('serviceWorker' in navigator) {
+		  window.addEventListener('load', () => {
+		    navigator.serviceWorker.register('/sw.js')
+		        .then((reg) => {
+		          console.log('Service worker registered.', reg);
+		        });
+		  });
+		}
 		}
 		window.ontouchmove = function() {
 			return false;
