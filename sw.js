@@ -1,6 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
 
+
 workbox.routing.registerRoute(
   /index\.html/,
   workbox.strategies.networkFirst({
@@ -10,7 +11,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   /.*\.css/,
-  workbox.strategies.cacheFirst({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: 'workbox:css',
   })
 );
